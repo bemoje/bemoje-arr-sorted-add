@@ -347,7 +347,7 @@ const repo = new (class {
 					'results.md',
 				)
 				if (fs.existsSync(benchResultsPath)) {
-					return '## Benchmark\n' + this.readFile(benchResultsPath)
+					return this.readFile(benchResultsPath)
 				}
 				return ''
 			})(),
