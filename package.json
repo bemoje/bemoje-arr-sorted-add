@@ -1,6 +1,6 @@
 {
    "name": "@bemoje/arr-sorted-add",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "description": "For a sorted array, add an element. Whichever comparator function was used to sort the array, can be passed. Also supports comparator-builder options. For reference, see: https://github.com/bemoje/bemoje-arr-sort-comparator",
    "main": "dist/arr-sorted-add.umd.js",
    "module": "dist/arr-sorted-add.esm.js",
@@ -47,13 +47,13 @@
    "license": "MIT",
    "dependencies": {
       "@bemoje/arr-sort-comparator": "^1.0.4",
-      "@bemoje/arr-sorted-insertion-index": "^3.0.0",
+      "@bemoje/arr-sorted-insertion-index": "^3.0.1",
       "@bemoje/assert-args": "^1.0.0",
       "@bemoje/assert-type": "^1.0.0"
    },
    "devDependencies": {
       "babel-core": "^6.26.3",
-      "babel-jest": "^25.5.0",
+      "babel-jest": "^25.5.1",
       "babel-preset-env": "^1.7.0",
       "documentation": "^12.3.0",
       "esm": "^3.2.25",
