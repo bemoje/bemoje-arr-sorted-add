@@ -41,8 +41,6 @@ export default function arrSortedAdd(arr, element, compare, duplicates = true) {
 	// get index at which to insert the new element
 	const pos = arrSortedInsertionIndex(arr, element, compare)
 
-	console.log(pos - 1)
-
 	// dont add if exists
 	if (
 		!duplicates &&
