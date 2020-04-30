@@ -1,3 +1,4 @@
+import arrSortComparator from '@bemoje/arr-sort-comparator'
 import arrSortedInsertionIndex from '@bemoje/arr-sorted-insertion-index'
 import assertArgs from '@bemoje/assert-args'
 import assertType from '@bemoje/assert-type'
@@ -11,9 +12,10 @@ import assertType from '@bemoje/assert-type'
  * @param {boolean} [compare.descending=false] - Sort in descending order. Defaults to ascending order.
  * @param {boolean} [compare.array=false] - Sort arrays. Nested arrays are also compared recursively.
  * @param {number|string|getter} [compare.by=undefined] - Sort by either array index, a callback(element): any - or by object keys with dot-notation support.
+ * @param {boolean} [duplicates=true] - Whether to add the element if a duplicate element exists.
  * @returns {Array} The sorted array
  */
-export default function arrSortedAdd(arr, element, compare) {
+export default function arrSortedAdd(arr, element, compare, duplicates = true) {
 	assertArgs(arr, element)
 	assertType(Array, arr)
 
@@ -25,8 +27,31 @@ export default function arrSortedAdd(arr, element, compare) {
 		return arr
 	}
 
+	// handle comparator
+	if (compare) {
+		if (typeof compare === 'object') {
+			// is comparator builder options
+			compare = arrSortComparator(compare)
+		}
+	} else {
+		// set default comparator
+		compare = arrSortComparator()
+	}
+
 	// get index at which to insert the new element
 	const pos = arrSortedInsertionIndex(arr, element, compare)
+
+	console.log(pos - 1)
+
+	// dont add if exists
+	if (
+		!duplicates &&
+		(compare(arr[pos], element) === 0 ||
+			compare(arr[pos + 1], element) === 0 ||
+			compare(arr[pos - 1], element) === 0)
+	) {
+		return arr
+	}
 
 	// increase array size.
 	arr.push(element)

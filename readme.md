@@ -131,6 +131,8 @@ For a sorted array, add an element. Whichever comparator function was used to so
 
     -   `compare.by` **([number][10] \| [string][11] \| [getter][12])** Sort by either array index, a callback(element): any - or by object keys with dot-notation support. (optional, default `undefined`)
 
+-   `duplicates` **[boolean][9]** Whether to add the element if a duplicate element exists. (optional, default `true`)
+
 Returns **[Array][6]** The sorted array
 
 ## getter

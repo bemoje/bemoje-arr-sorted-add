@@ -9,6 +9,12 @@ describe('arrSortedAdd', () => {
 		expect(arr).toStrictEqual([2])
 	})
 
+	test('no dupes and exists', () => {
+		const arr = [1, 2, 3]
+		arrSortedAdd(arr, 2, { numeric: true }, false)
+		expect(arr).toStrictEqual([1, 2, 3])
+	})
+
 	test('examples', () => {
 		/**
 		 * ADD ELEMENT TO SORTED ARRAY

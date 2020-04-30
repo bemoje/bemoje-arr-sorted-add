@@ -20,6 +20,7 @@ For a sorted array, add an element. Whichever comparator function was used to so
     -   `compare.descending` **[boolean][9]** Sort in descending order. Defaults to ascending order. (optional, default `false`)
     -   `compare.array` **[boolean][9]** Sort arrays. Nested arrays are also compared recursively. (optional, default `false`)
     -   `compare.by` **([number][10] \| [string][11] \| [getter][12])** Sort by either array index, a callback(element): any - or by object keys with dot-notation support. (optional, default `undefined`)
+-   `duplicates` **[boolean][9]** Whether to add the element if a duplicate element exists. (optional, default `true`)
 
 Returns **[Array][6]** The sorted array
 
